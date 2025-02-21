@@ -1,0 +1,14 @@
+bot:
+  token: "your_bot_token_here"
+collectors:
+  twitter:
+    enabled: true
+    api_key: "TWJjqSZROriZZ0uOBysGf3WxQ"
+    api_secret: "dsv55mD1v3GZRpzrJpZMxDaNZ1Yu4Q6E9XJxyEjQ0ov5sPAaZX"
+    access_token: "1892954840093044736-U3bLqYY1C6yjOv2ChBpDwyehlVEpnc"
+    access_token_secret: "X0tSaTVnsQXPVVFJtOu3KmDcIvRuBFHL71RPTisenISh6"
+    bearer_token: "AAAAAAAAAAAAAAAAAAAAAMvdzQEAAAAAY6XMkmVir5zZBbXpLe2%2BTi2Tauk%3D7wwEVIdgQcpxXWpeYQylBNECnrOSSxAhQcAEyUSLzmKaNIUl1W"
+    accounts:
+      - "@elonmusk"
+      - "@cz_binance"
+      - "@CoinDesk"
