@@ -13,9 +13,7 @@ news_bot_project/
 │   ├── data_processor.py          # Основной процессор данных
 │   └── filters.py                 # Фильтры и метрики
 ├── database/                      # Модуль базы данных
-│   ├── db.py                      # Подключение к базе данных
-│   ├── models.py                  # Определение таблиц (SQLAlchemy или другая ORM)
-│   └── migrations/                # Миграции для базы данных (если используется)
+│   └── db.py                      # Подключение к базе данных
 ├── notifications/                 # Модуль уведомлений
 │   ├── telegram_notifier.py       # Отправка сообщений через Telegram-бота
 │   └── base_notifier.py           # Базовый класс для уведомлений
