@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 class BlockCollector:
     def __init__(self, config):
         self.config = config
-        self.driver = webdriver.Safari()  # Используем Safari, как указано в контексте
+        self.driver = webdriver.Safari()
         self.latest_news = []
 
     async def collect_news_periodically(self, interval):
