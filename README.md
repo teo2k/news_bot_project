@@ -13,7 +13,7 @@
 - **Язык**: Python
 - **Библиотеки**: Selenium, Asyncio, Pandas, Psycopg2
 - **База данных**: PostgreSQL
-- **API**: Reddit API, другие источники данных
+- **API**: Reddit API, CoinGecko API
 
 ## Как это работает?
 
