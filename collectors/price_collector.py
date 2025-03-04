@@ -14,8 +14,8 @@ class PriceCollector:
         self.metrics_cache = {}  # Кэш для метрик монет
         self.cache_timeout = 3600  # Тайм-аут кэша в секундах (1 час)
 
+    # Загружает список монет с CoinGecko и обновляет кэш.
     def _fetch_coin_list(self):
-        """Загружает список монет с CoinGecko и обновляет кэш."""
         try:
             response = requests.get(f"{self.api_url}/coins/list", headers={"accept": "application/json"})
             if response.status_code == 200:
@@ -26,9 +26,9 @@ class PriceCollector:
                 self.logger.error(f"Не удалось получить список монет: {response.status_code}")
         except Exception as e:
             self.logger.error(f"Ошибка запроса: {e}")
-
+            
+    # Находит ID монеты по её имени или символу.
     def _get_coin_id(self, coin):
-        """Находит ID монеты по её имени или символу."""
         if not self.last_fetch or (datetime.now() - self.last_fetch).total_seconds() > self.cache_timeout:
             self._fetch_coin_list()
 
@@ -42,9 +42,9 @@ class PriceCollector:
                 return c["id"]
         self.logger.warning(f"Монета {coin} не найдена в списке")
         return None
-
+    
+    # Получает историческую цену монеты за указанное количество дней назад.
     def _get_historical_price(self, coin_id, days):
-        """Получает историческую цену монеты за указанное количество дней назад."""
         date = (datetime.now() - timedelta(days=days)).strftime("%d-%m-%Y")
         try:
             response = requests.get(f"{self.api_url}/coins/{coin_id}/history?date={date}")
@@ -57,9 +57,9 @@ class PriceCollector:
         except Exception as e:
             self.logger.error(f"Ошибка при получении исторической цены: {e}")
             return None
-
+            
+    #Получает все метрики для монеты, используя кэш, если данные актуальны.
     def get_coin_metrics(self, coin):
-        """Получает все метрики для монеты, используя кэш, если данные актуальны."""
         coin_id = self._get_coin_id(coin)
         if not coin_id:
             self.logger.warning(f"ID для {coin} не найден")
