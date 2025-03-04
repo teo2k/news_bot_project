@@ -7,7 +7,7 @@ news_bot_project/
 │   ├── reddit_collector.py        # Коллектор для Reddit
 │   ├── telegram_collector.py      # Коллектор для Telegram (пока не реализован)
 │   ├── discord_collector.py       # Коллектор для Discord (пока не реализован)
-│   └── merger.py                  # Объединение новости с курсом и добавление в создаваемый dt
+│   └── merge.py                   # Формирование записи и добавление ее в бд
 ├── processor/                     # Модуль обработки данных
 │   ├── data_processor.py          # Основной процессор данных
 │   └── filters.py                 # Фильтры и метрики
